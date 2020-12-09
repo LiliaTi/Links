@@ -40,14 +40,14 @@ if __name__ == '__main__':
     args = parser.parse_args()
     link = args.link
     if is_bitlink(token, link):
-	try:
-	    print('Количество переходов по битлинку:', count_clicks(token, link))
-	except requests.exceptions.HTTPError:
-	    print('Неверная ссылка!')
+        try:
+            print('Количество переходов по битлинку:', count_clicks(token, link))
+        except requests.exceptions.HTTPError:
+            print('Неверная ссылка!')
     else:
-	 try:
-	    bitlink = shorten_link(token, link)
-	    print('Битлинк', bitlink)
-	 except requests.exceptions.HTTPError:
-	    print('Неверная ссылка')
-		
+        try:
+            bitlink = shorten_link(token, link)
+            print('Битлинк', bitlink)
+        except requests.exceptions.HTTPError:
+            print('Неверная ссылка')
+	
